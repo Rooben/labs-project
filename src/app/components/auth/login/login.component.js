@@ -1,0 +1,27 @@
+// -------- Login component to contain all the login logic --------------------
+
+var login = {
+    templateUrl: './login.html', // This will be pulled in automatically and concatenated by the template module, preventing unnecessary http requests.
+    controller: 'LoginController'
+};
+
+// Angular module to contain the stateful routed component
+angular
+    .module('components.auth')
+    .component('login', login)
+    .config(function($stateProvider, $urlRouterProvider){
+        $stateProvider
+            .state('auth', {
+                redirectTo: 'auth.login',
+                url: '/auth',
+                template: '<div ui-view></div>'
+            })
+            .state('auth.login', {
+                url: '/login', // This '/login' url will be appended to the parent '/auth' to be '.../auth/login/...'
+                component: 'login' // When the user navigates to '/auth/login/', this login component will be displayed inside the ui-view under the parent state auth.
+            });
+        $urlRouterProvider.otherwise('/auth/login'); // Any other route not understood by the login app, defaults to '/auth/login/'
+
+    });
+
+
