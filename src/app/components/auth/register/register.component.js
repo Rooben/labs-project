@@ -10,6 +10,8 @@ angular
     .module('components.auth')
     .component('register', register)
     .config(function($stateProvider){
+        // ** Parent State still remains as 'auth'
+        // Nested child state = register
         $stateProvider
             .state('auth.register', {
                 url: './register', // This '/register' url will be appended to the parent '/auth' to be '.../auth/register/...'

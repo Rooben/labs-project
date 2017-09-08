@@ -9,6 +9,7 @@ var login = {
 angular
     .module('components.auth')
     .component('login', login)
+    //Configure the routes
     .config(function($stateProvider, $urlRouterProvider){
         $stateProvider
             .state('auth', {
