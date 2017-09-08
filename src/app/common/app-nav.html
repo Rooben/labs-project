@@ -1,0 +1,24 @@
+<!-- The markup for the nav-bar component -->
+
+<header class="header">
+  <div class="header__fixed">
+    <div>
+      <div class="header__brand">
+        Contacts
+        <a ui-sref="new" class="header__button header__button--new-contact">
+          <i class="material-icons">add_circle_outline</i>
+          New Contact
+        </a>
+      </div>
+      <div class="header__logout">
+        {{ ::$ctrl.user.email }} <!-- After the first dynamica interpolation and render of the email, this becomes static and wouldn't change again. Helps to make app faster. -->
+        <a href="" ng-click="$ctrl.onLogout();">
+          <span class="header__button">
+            <i class="material-icons">power_settings_new</i>
+            Logout
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

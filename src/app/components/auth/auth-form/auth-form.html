@@ -1,27 +1,28 @@
 <!-- Auth-Form component markup -->
 <form name="authForm" novalidate ng-submit="$ctrl.submitForm();">
-	<label>
-		<input
-			type="email"
-			name="email" <!-- the name property enables automatic angular validation when required is set -->
-			required="required"
-			placeholder="Enter your email"
-			ng-model="$ctrl.user.email"> <!-- Binds to the user's email property -->
-	</label>
-	<label>
-		<input
-			type="password"
-			name="password"
-			required="required"
-			placeholder="Enter your password"
-			ng-model="$ctrl.user.password"> <!-- Binds to the user's password property -->
-	</label>
-	<div class="auth-button">
-		<button type="submit" ng-disabled="authForm.$invalid"> <!-- If this form is not valid, disable this button -->
-			{{ $ctrl.button }}
-		</button>
-	</div>
-	<div ng-if="$ctrl.message"> <!-- Display the passed down message if there is any, else don't load this div in the DOM. -->
-		{{ $ctrl.message }}
-	</div>
+  <label>
+    <!-- the name property in all form elements enables automatic angular validation when required is set -->
+    <input
+      type="email"
+      name="email"
+      required="required"
+      placeholder="Enter your email"
+      ng-model="$ctrl.user.email"> <!-- Binds to the user's email property -->
+  </label>
+  <label>
+    <input
+       type="password"
+       name="password"
+       required="required"
+       placeholder="Enter your password"
+       ng-model="$ctrl.user.password"> <!-- Binds to the user's password property -->
+  </label>
+  <div class="auth-button">
+    <button type="submit" ng-disabled="authForm.$invalid"> <!-- If this form is not valid, disable this button -->
+      {{ $ctrl.button }}
+    </button>
+  </div>
+  <div ng-if="$ctrl.message"> <!-- Display the passed down message if there is any, else don't load this div in the DOM. -->
+    {{ $ctrl.message }}
+  </div>
 </form>
