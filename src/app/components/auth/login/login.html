@@ -1,13 +1,18 @@
-<!-- The login template that displays the mockup when the user is redirected to login -->
+<!-- The login template that displays the mockup when the user is redirected to login...
+		this gets displayed inside the ui-view within the auth route template -->
 
 <div class="auth">
 	<h1>Login</h1>
+
+	<!-- Auth-form stateless component that displays passed-down data from this login component, to the user and..
+		passes back data up to this login component as event object properties for further transmission to firebase -->
 	<auth-form
 		user="$ctrl.user"
 		message="{{ $ctrl.error }}"
 		button="Login"
 		on-submit="$ctrl.loginUser($event);">
 	</auth-form>
+
 </div>
 <div class="auth__info">
 	<a ui-sref="auth.register">

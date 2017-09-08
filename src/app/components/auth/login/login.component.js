@@ -5,17 +5,17 @@ var login = {
     controller: 'LoginController'
 };
 
-// Angular module to contain the stateful routed component
+// Register the login component to angular through the 'components.auth' module
 angular
     .module('components.auth')
     .component('login', login)
-    //Configure the routes
+    //Configure routing for the auth and login single pages
     .config(function($stateProvider, $urlRouterProvider){
         $stateProvider
             .state('auth', {
                 redirectTo: 'auth.login',
                 url: '/auth',
-                template: '<div ui-view></div>'
+                template: '<div ui-view></div>' // The ui-view here will be used to display the nested view which is login
             })
             .state('auth.login', {
                 url: '/login', // This '/login' url will be appended to the parent '/auth' to be '.../auth/login/...'

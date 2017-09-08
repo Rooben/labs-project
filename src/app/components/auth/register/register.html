@@ -3,8 +3,8 @@
 <div class="auth">
 	<h1>Register</h1>
 
-	<!-- Stateless component (API) will receive user data,
-	manipulate it and send it back to parent(stateful) -->
+	<!-- Stateless component (API) will receive user data from this register controller, display it,
+	manipulate it and send it back to this register(stateful) component for further transmission to firebase -->
 	<auth-form
 		user="$ctrl.user"
 		message="{{$ctrl.error}}"

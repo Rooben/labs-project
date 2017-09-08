@@ -1,11 +1,12 @@
 // -------- Login component to contain all the register logic --------------------
 
+// Component definition object
 var register = {
     templateUrl: './register.html', // This will be pulled in automatically and concatenated by the template module, preventing unnecessary http requests.
     controller: 'RegisterController'
 };
 
-// Angular module to contain the stateful routed component
+// Register the component object to angular through the 'components.auth' module
 angular
     .module('components.auth')
     .component('register', register)

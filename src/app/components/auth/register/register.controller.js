@@ -1,6 +1,6 @@
 // Register controller to handle the logic for the auth app
 
-function RegisterController(){
+function RegisterController(AuthService, $state){
     var ctrl = this;
     // Initialize who the user is and any errors that might be passed by firebase
     ctrl.$onInit = function(){
@@ -17,9 +17,10 @@ function RegisterController(){
         return AuthService
             .register(event.user)
             .then(function(){
-                console.log('USER', user);
+                console.log('Success!'); //
+                console.log('USER', user); //
             }, function(reason){
-                ctrl.error = reason.message;
+                ctrl.error = reason.message; // In case firebase rejects the promise, pass back the error message to the register controller, which will be passed down to the auth-form component for display.
             });
     }
 }

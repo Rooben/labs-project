@@ -1,3 +1,5 @@
+// Define the 'components.auth' module, register it with angular and also register the...
+// firebase configuration to angular through the newly created 'components.auth' module.
 angular
     .module('components.auth', [
         'ui.router',
