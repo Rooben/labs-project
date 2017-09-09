@@ -1,5 +1,4 @@
-<!-- The markup for the nav-bar component -->
-
+<!-- Markup for the appNav component -->
 <header class="header">
   <div class="header__fixed">
     <div>
@@ -11,7 +10,7 @@
         </a>
       </div>
       <div class="header__logout">
-        {{ ::$ctrl.user.email }} <!-- After the first dynamica interpolation and render of the email, this becomes static and wouldn't change again. Helps to make app faster. -->
+        {{ ::$ctrl.user.email }} <!-- :: removes angular watch from this binding, to enable static binding, good for peformance -->
         <a href="" ng-click="$ctrl.onLogout();">
           <span class="header__button">
             <i class="material-icons">power_settings_new</i>

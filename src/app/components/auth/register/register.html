@@ -1,21 +1,21 @@
 <!-- The register template that displays the markup when the user needs to create a new account -->
 
 <div class="auth">
-	<h1>Register</h1>
+  <h1>Register</h1>
 
-	<!-- Stateless component (API) will receive user data from this register controller, display it,
-	manipulate it and send it back to this register(stateful) component for further transmission to firebase -->
-	<auth-form
-		user="$ctrl.user"
-		message="{{$ctrl.error}}"
-		button="Create user"
-		on-submit="$ctrl.createUser($event);">
-	</auth-form>
+  <!-- Stateless component (API) will receive user data from this register controller, display it,
+  manipulate it and send it back to this register(stateful) component for further transmission to firebase -->
+  <auth-form
+     user="$ctrl.user"
+     message="{{$ctrl.error}}"
+     button="Create user"
+     on-submit="$ctrl.createUser($event);">
+  </auth-form>
 
 </div>
 
 <div class="auth__info">
-	<a ui-sref="auth.login">
-		Don't have an account? Create one here.
-	</a>
+  <a ui-sref="auth.login">
+    Don't have an account? Create one here.
+  </a>
 </div>

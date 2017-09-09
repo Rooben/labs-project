@@ -1,5 +1,4 @@
-<!-- The markup of the side-bar -->
-
+<!-- Markup for the app-sidebar -->
 <aside class="sidebar">
   <div class="sidebar__logo">
     <a href="">
@@ -12,15 +11,15 @@
   <ul class="sidebar__lst">
     <li
       class="sidebar__item"
-      ng-repeat="item in ::$ctrl.contactTags">
+      ng-repeat="item in ::$ctrl.contactTags"><!-- Since this binding will not change after being rendered the first time, it is better to make it static with :: -->
         <a
           class="sidebar__link"
           ui-sref="contacts({ filter: item.state })"
           ui-sref-active-eq="sidebar__link--active">
           <i class="material-icons">
-            {{ ::item.icon }} <!-- statically rendered content -->
+            {{ ::item.icon }} <!-- Static binding after the first dynamic binding -->
           </i>
-          {{ ::item.label }} <!-- statically rendered content -->
+          {{ ::item.label }} <!-- Static binding after the first dynamic binding -->
         </a>
     </li>
   </ul>

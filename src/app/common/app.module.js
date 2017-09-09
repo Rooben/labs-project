@@ -3,8 +3,8 @@
 
 angular
     .module('common', [
-    'ui.router',
-    'angular-loading-bar' // Register the loading bar module as a dependency.
+        'ui.router',
+        'angular-loading-bar' // Register the loading bar module as a dependency.
     ])
     // Show and hide the loading bar based on the view transitions
     .run(function ($transitions, cfpLoadingBar){  // cfpLoadingBar is a service given to us by the angular-loading-bar module

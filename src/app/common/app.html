@@ -1,12 +1,9 @@
 <!-- The markup of the app view  -->
 
 <div class="root">
-  <app-nav user="$ctrl.user" on-logout="$ctrl.logout();"></app-nav> <!-- Nav bar component -->
-
-  <app-sidebar></app-sidebar> <!-- Side bar component -->
-
+  <app-nav user="$ctrl.user" on-logout="$ctrl.logout();"></app-nav>
+  <app-sidebar></app-sidebar>
   <div class="app">
-    <div ui-view></div> <!-- This ui-view will render all the child states for the application -->
+    <div ui-view></div> <!-- This ui-view will render child state for the application -->
   </div>
-
 </div>

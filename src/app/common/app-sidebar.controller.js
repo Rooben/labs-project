@@ -1,9 +1,7 @@
-// Define the controller of the app side-bar component
-
+// Controller for the app-sidebar
 function AppSidebarController() {
   var ctrl = this;
-
-  // Create a list for the contact tags
+  // Create the tags listed on the left sidebar
   ctrl.contactTags = [
     {
       label: 'All contacts',
@@ -21,7 +19,7 @@ function AppSidebarController() {
       state: 'family'
     },
     {
-      label: 'Acquaintances',
+    label: 'Acquaintances',
       icon: 'accessibility',
       state: 'acquaintances'
     },
@@ -33,7 +31,7 @@ function AppSidebarController() {
   ];
 }
 
-// Register the controller under the 'common' module
+// Register the controller unter the common module
 angular
   .module('common')
   .controller('AppSidebarController', AppSidebarController);

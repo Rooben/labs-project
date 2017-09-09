@@ -17,5 +17,5 @@ function AppController(AuthService, $state) { // Inject the AuthService and the 
 }
 
 angular
-  .module('common')
-  .controller('AppController', AppController);
+    .module('common')
+    .controller('AppController', AppController);
