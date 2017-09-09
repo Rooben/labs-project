@@ -24,9 +24,8 @@ function ContactNewController(ContactService, $state) { // Inject the contact se
   ctrl.createNewContact = function (event) {
     return ContactService
     // Pass in the event object received from the stateless component
-        .createNewContact(event.contact)
+        .createNewContact(event.contact)// Passed-in contact from the stateless component is passed to firebase through the ContactService.
         .then(function (contact) {
-          console.log(contact);
           $state.go('contact', {
             id: contact.key
           });

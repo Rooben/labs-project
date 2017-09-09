@@ -1,3 +1,4 @@
+// Create the contact-tag component and register it under the components.contact module
 var contactTag = {
   bindings: {
     tag: '<',

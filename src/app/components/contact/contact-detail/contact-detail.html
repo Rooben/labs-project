@@ -129,6 +129,11 @@
         <label>
           Twitter
         </label>
+
+        <!-- The ng-model-options object controls when the data update kicks off. Default...
+             stands for update as the user starts typing, but with a delay of 250 ms after the user stops typing.
+             Alternatively, update kicks off on blur, with a delay of 0 mili seconds. -->
+        <!-- ng-change listens for the ng-change event and runs the updateContact method -->
         <input
           type="text"
           name="twitter"

@@ -20,7 +20,7 @@ angular
         $firebaseRefProvider
             .registerUrl({
                 default: config.databaseURL,
-                contacts: config.databaseURL + '/contacts'
+                contacts: config.databaseURL + '/contacts' // This is the API with which the front-end will be talking, in order to make requests.
             });
 
         firebase.initializeApp(config);
@@ -38,7 +38,7 @@ angular
         function(){
             return AuthService
                 .requireAuthentication()
-                .catch(function (){// This catch method runs if any issue occurs with any transition, or if the user trys to access a login protected route.
+                .catch(function (){// This catch method runs if any issue or error occurs with any transition, or if the user trys to access a login protected route, consecuently, user will be sent to the login page.
                     return $state.target('auth.login');// Redirects the user to the login page.
                 });
         });

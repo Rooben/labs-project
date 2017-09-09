@@ -10,7 +10,7 @@ function ContactDetailController() {
   };
 
   // Wrapper for the onSave calback function, will pass back the event object to the parent component
-  ctrl.saveContact = function () {
+  ctrl.saveContact = function(){
     ctrl.onSave({
       $event: {
         contact: ctrl.contact
