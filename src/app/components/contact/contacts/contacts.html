@@ -1,6 +1,9 @@
+<!-- Mockup for the contacts component which will be used to display each contact as an item of a list-->
+
 <div class="contacts">
   <ul class="contacts-list">
-    <li ng-repeat="contact in $ctrl.filteredContacts">
+    <!-- <li ng-repeat="contact in $ctrl.filteredContacts"> -->  <!-- Commented this out for now, since filter is not working -->
+    <li ng-repeat="contact in $ctrl.contacts">
       <contact
         contact="contact"
         on-select="$ctrl.goToContact($event);">
@@ -9,7 +12,7 @@
   </ul>
   <div
     class="contacts__empty"
-    ng-if="!$ctrl.filteredContacts.length">
+    ng-if="!$ctrl.contacts.length">
     <i class="material-icons">face</i>
     There's no one here...
   </div>

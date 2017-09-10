@@ -4,12 +4,16 @@ function ContactService(AuthService, $firebaseRef, $firebaseArray, $firebaseObje
   var ref = $firebaseRef.contacts; // Returns the reference to the url to which restful requests will be made.
   var uid = AuthService.getUser().uid; // Returns the uid of the user, stored in memory in the the Authservice.
   return {
+    // Call firebase and pass a new contact to be created
     createNewContact: function (contact) {
       return $firebaseArray(ref.child(uid)).$add(contact); // Create a new contact in firebase, using the contact passed in.
     },
+
     getContactById: function (id) { // id here is the id that was fetched from the resolve in the params.
       return $firebaseObject(ref.child(uid).child(id)); // Return the contact that contains the passed in id
     },
+
+    // Create a method that when called, returns the complete contact list from firebase
     getContactList: function () {
       return $firebaseArray(ref.child(uid));
     },

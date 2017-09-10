@@ -15,7 +15,7 @@
         <a
           class="sidebar__link"
           ui-sref="contacts({ filter: item.state })"
-          ui-sref-active-eq="sidebar__link--active">
+          ui-sref-active-eq="sidebar__link--active"> <!-- This will add the active class based on which state is active -->
           <i class="material-icons">
             {{ ::item.icon }} <!-- Static binding after the first dynamic binding -->
           </i>
