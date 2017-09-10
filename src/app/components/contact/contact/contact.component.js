@@ -1,3 +1,4 @@
+// Create a definition object for the contact component
 var contact = {
   bindings: {
     contact: '<',

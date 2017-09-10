@@ -25,7 +25,8 @@ angular
 
         firebase.initializeApp(config);
     })
-    // Setup the transition hooks that call specific functions when specific routes are navigated to
+    // Setup the transition hooks that call specific functions when specific routes are navigated to, will be...
+    // applied to all the routes, and while that happens, any errors that occur are captured by the catch() method and user will be directed to the login view.
     .run(function ($transitions, $state, AuthService){
         // Create transition hook for transition start
         $transitions.onStart({// On transition start, dynamically check the route to which the user wants to go.

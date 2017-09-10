@@ -1,3 +1,8 @@
+<!-- Nest a stateless component called contact-detail component in this current component(contact-edit),
+	to be used to display the contact details and also send back the event payload back to be processed
+	 eventually to firebase, and this happens when the user is editing a contact. We also give this nested
+	  component delete capabilities -->
+
 <contact-detail
   contact="$ctrl.contact"
   on-delete="$ctrl.deleteContact($event);"

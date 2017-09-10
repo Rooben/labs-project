@@ -1,9 +1,12 @@
+<!-- Markup for the contact tag -->
+
 <div class="contact__field contact__field--long">
   <label>
     Tag
   </label>
   <ul>
 
+    <!-- Loop through and display the tags, while assigning them the appropriate class that gives their specific background colors. -->
     <!-- ::$ctrl.tags once more, is one time dynamic binding -->
     <li
       class="contact-card__pill contact-card__pill--{{ tag }}"
@@ -11,7 +14,7 @@
       ng-class="{
         'contact__pill--active': $ctrl.tag == tag
       }">
-      <a href="" ng-click="$ctrl.updateTag(tag);">
+      <a href="" ng-click="$ctrl.updateTag(tag);">  <!-- When each tag is clicked, pass the corresponding tag  -->
         {{ ::tag }}
       </a>
     </li>

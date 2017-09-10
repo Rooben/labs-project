@@ -1,4 +1,6 @@
-<!-- This contact-new component is a stateful component, which has the contact-detail as it's child component -->
+<!-- Nest a stateless component called contact-detail component in this current component(contact-new),
+	to be used to display the contact details and also send back the event payload back to be processed
+	 eventually to firebase. -->
 
 <contact-detail
   contact="$ctrl.contact"

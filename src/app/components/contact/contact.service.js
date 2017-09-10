@@ -1,4 +1,4 @@
-// Create a contact service
+// Create a contact service to be used for all the contact actions in this contact application.
 
 function ContactService(AuthService, $firebaseRef, $firebaseArray, $firebaseObject) {
   var ref = $firebaseRef.contacts; // Returns the reference to the url to which restful requests will be made.
@@ -7,8 +7,8 @@ function ContactService(AuthService, $firebaseRef, $firebaseArray, $firebaseObje
     createNewContact: function (contact) {
       return $firebaseArray(ref.child(uid)).$add(contact); // Create a new contact in firebase, using the contact passed in.
     },
-    getContactById: function (id) {
-      return $firebaseObject(ref.child(uid).child(id)); // Pass in the id extracted from the contact-edit route params.
+    getContactById: function (id) { // id here is the id that was fetched from the resolve in the params.
+      return $firebaseObject(ref.child(uid).child(id)); // Return the contact that contains the passed in id
     },
     getContactList: function () {
       return $firebaseArray(ref.child(uid));

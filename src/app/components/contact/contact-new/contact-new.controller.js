@@ -4,7 +4,7 @@ function ContactNewController(ContactService, $state) { // Inject the contact se
   var ctrl = this;
   // Create initial data in the onInit life cycle hook
   ctrl.$onInit = function () {
-    // Set up the contact properties during initial load
+    // Set up the user contact input properties. Best to be done at the initial load life cycle.
     ctrl.contact = {
       name: '',
       email: '',
@@ -16,16 +16,17 @@ function ContactNewController(ContactService, $state) { // Inject the contact se
         twitter: '',
         linkedin: ''
       },
-      tag: 'none'
+      tag: 'none' // By default, this is set to none, but each time a tag is clicked on, this will be set to the clicked tag.
     };
   };
 
-  // Create function to be used to create a new contact
+  // Define a function to be used to create a new contact, by receiving data from a stateless component and then forward to firebase.
   ctrl.createNewContact = function (event) {
     return ContactService
     // Pass in the event object received from the stateless component
         .createNewContact(event.contact)// Passed-in contact from the stateless component is passed to firebase through the ContactService.
         .then(function (contact) {
+          // At this point, the new contact should have been created and can be retrieved back here, from firebase.
           $state.go('contact', {
             id: contact.key
           });

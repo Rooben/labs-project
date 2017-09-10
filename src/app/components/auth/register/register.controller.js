@@ -17,6 +17,7 @@ function RegisterController(AuthService, $state){
     return AuthService
         .register(event.user)
         .then(function(){
+        // * At this point, the user is fully authorized.
           $state.go('app'); // This state is built to show only contents meant for authenticated users.
         }, function(reason){
           ctrl.error = reason.message; // In case firebase rejects the promise, pass back the error message to the register controller, which will be passed down to the auth-form component for display.
