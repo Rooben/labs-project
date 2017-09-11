@@ -31,7 +31,7 @@ describe('Auth', function () {
     it('should go to auth.register state', function() {
       spyOn(AuthService, 'requireAuthentication').and.callFake(
         function () {
-          return $q.when('is authenticated');
+          return $q.when('isAuthenticated');
         }
       );
       goTo('/auth/register');

@@ -15,7 +15,7 @@ angular
         // Nested child state = register
         $stateProvider
             .state('auth.register', {
-                url: './register', // This '/register' url will be appended to the parent '/auth' to be '.../auth/register/...'
+                url: '/register', // This '/register' url will be appended to the parent '/auth' to be '.../auth/register/...'
                 component: 'register' // When the user navigates to '/auth/register/', this register component will be displayed inside the ui-view under the parent state auth.
             });
     });
